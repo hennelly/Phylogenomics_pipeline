@@ -9,8 +9,8 @@
 
 #conda activate /projects/mjolnir1/apps/conda/python-3.5.6
 
-cd /projects/mjolnir1/people/crq857/Chapter2/05_Phylogenomics/input_March2024/
-#ls > /projects/mjolnir1/people/crq857/Chapter2/05_Phylogenomics/input_March2024/listfiles.txt
+cd input
+ls *.vcf > list_of_vcffiles.txt
 
 FILE=$(sed "${SLURM_ARRAY_TASK_ID}q;d" /projects/mjolnir1/people/crq857/Chapter2/05_Phylogenomics/input_March2024/listfiles.txt)
 
