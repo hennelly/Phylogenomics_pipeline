@@ -10,17 +10,18 @@
 #conda activate /projects/mjolnir1/apps/conda/python-3.5.6
 
 cd input
-ls *.vcf > list_of_vcffiles.txt
+ls *.vcf > list_of_vcffiles.txt #like last time, we want to obtain a list of the vcf files so we can run an array
 
-FILE=$(sed "${SLURM_ARRAY_TASK_ID}q;d" /projects/mjolnir1/people/crq857/Chapter2/05_Phylogenomics/input_March2024/listfiles.txt)
+RANDOMVCF=$(sed "${SLURM_ARRAY_TASK_ID}q;d" list_of_vcffiles.txt) #this is the specific script to tell the cluster to run an array. 
 
 DIR=/projects/mjolnir1/people/crq857/Chapter2/05_Phylogenomics/input_March2024
 OUTDIR=/projects/mjolnir1/people/crq857/Chapter2/05_Phylogenomics/phyfiles_autosomes_all_March2024
 VCF=/projects/mjolnir1/people/crq857/Chapter2/06_Datasets/Autosomes_filtered_noindels_noastrick_diploid_minQ30_biallelic_maxmiss0.9_forASTRAl.recode.vcf
 
 #add header 
-grep "#" ${VCF} > header_autosomes.txt
-cat header_autosomes.txt ${DIR}/${FILE} > ${DIR}/${FILE}_header.vcf
-rm ${DIR}/${FILE}
+grep "#" autsomes.vcf > header_autosomes.txt #Each randomly generated vcf file does not have a header, so we need to add that first
+cat header_autosomes.txt ${RANDOMVCF} > ${RANDOMVCF}_header.vcf
 
-python /projects/mjolnir1/people/crq857/Geneflow_Dogs/bin/vcf2phylip/vcf2phylip.py -i ${DIR}/${FILE}_header.vcf --output-folder ${OUTDIR} --output-prefix ${FILE}_phy -o Dhole_BerlinZoo
+python /projects/mjolnir1/people/crq857/Geneflow_Dogs/bin/vcf2phylip/vcf2phylip.py -i ${RANDOMVCF}_header.vcf --output-folder ${OUTDIR} --output-prefix ${RANDOMVCF}_phy -o Dhole_BerlinZoo
+#Now we can run the script to convert each of the 5000 vcf files to phy files. 
+#the -o is to indicate the outgroup taxa
