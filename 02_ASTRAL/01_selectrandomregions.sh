@@ -12,4 +12,4 @@ module load bedtools
 
 bedtools random -g ${GENOME} -l 20000 -n 5000 
 
-#This script is using the dog reference genome to select 5000 random regions that are 20kb in length. 
+#This script is using the dog reference genome to select 5000 random regions that are 20kb in length. This script will output a list of 5000 regions in the form of the start and end position on each line. 
