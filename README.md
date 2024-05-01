@@ -8,6 +8,6 @@ Pipeline for phylogenomic analyses for the autosomes
 
 ## 02 Sliding window autosomal phylogeny using ASTAL
 
-- This approach consists of two steps. The first is to infer many trees in specific genomic regions across the genome. The second step is to find which trees are most prevalent among all the trees we generated across all the genomic regions. The most common tree is likely the "species tree", as in the historical relationships between species.
+- This approach consists of two steps. The first is to infer many trees in specific genomic regions across the genome. The second step is to find which trees are most prevalent among all the trees we generated across all the genomic regions. The most common tree is often the "species tree", as in the historical relationships between species.
 
 - You can find the ASTRAL paper here: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2129-y#Sec31
