@@ -8,8 +8,9 @@
 #SBATCH --array=10-5000%10
 
 RANDOMREGION=$(sed "${SLURM_ARRAY_TASK_ID}q;d" listfiles.txt)
-DIR=/projects/mjolnir1/people/crq857/Chapter2/05_Phylogenomics/input
 
+mkdir input #make a directory to store the 5000 vcf files
+cd input
 
 module load bedtools
 
