@@ -10,11 +10,11 @@
 mkdir Randomregions
 cd Randomregions
 
-awk '!/^$/{print  > "File_"NR".txt" }' randomregions.txt
+awk '!/^$/{print  > "File_"NR".txt" }' randomregions_output_bedfile.txt
 
 ## This now gets a bit tedious. We need to write each line of the file containing the 5000 random regions coordinates to its own individual file. This is for getting the next script to work properly. 
 ## The output will be 5000 individual files labled File_1.txt File_2.txt File_3.txt, etc. 
 
-ls > listofpositions.txt
+ls > list_of_random_positions.txt
 
 ## This next script now makes a list of all these individual files into one file where each line is File_1.txt File_2.txt File_3.txt, etc. We are making this to run an array in the next script. 
