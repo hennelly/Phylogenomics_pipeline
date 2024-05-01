@@ -9,9 +9,8 @@
 #write each line of bed file as its own file
 mkdir Randomregions
 cd Randomregions
-FILE=/home/crq857/projects/Chapter2/scripts_Dec/randomregions_nochrX_finalversiontabbed.txt
 
-awk '!/^$/{print  > "File_"NR".txt" }' ${FILE}
+awk '!/^$/{print  > "File_"NR".txt" }' randomregions.txt
 
 ## This now gets a bit tedious. We need to write each line of the file containing the 5000 random regions coordinates to its own individual file. This is for getting the next script to work properly. 
 ## The output will be 5000 individual files labled File_1.txt File_2.txt File_3.txt, etc. 
