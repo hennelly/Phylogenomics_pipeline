@@ -1,13 +1,13 @@
 # Inferring autosomal phylogeny with ASTRAL 
 
 
-- Select 20,000kb length segments at 5,000 random region -> [02_ASTRAL_selectrandom.sh](/02_ASTRAL/01_selectrandomregions.sh)
+- Select 20,000kb length segments at 5,000 random region -> [01_selectrandomregions.sh](/02_ASTRAL/01_selectrandomregions.sh)
     - I then cd into the directory where all the random regions are located, and did 'ls > regions.txt'. This gives me a list of regions so I can run an array
 
 - Subset the vcf files to include only the 20,000kb length segments at 5,000 random regions -> [03_extract_randomregions_from_vcf.sh](/02_ASTRAL/03_extract_randomregions_from_vcf.sh)
     - I then cd into the directory where all the vcfs of random regions are located, and did `ls > listfiles.txt`. This gives me a list of vcfs of the 5,000 regions so I can run an array
 
-- Convert each of the 5,000 vcfs to a phy file -> [04_ASTRAL_vcf2phy.sh](/05_Phylogenomics/01_Autosomes/04_ASTRAL_vcf2phy.sh)
+- Convert each of the 5,000 vcfs to a phy file -> [04_vcf2phy.sh](/02_ASTRAL/04_vcf2phy.sh)
    - This involves adding a header to each vcf file
    - I then cd into the directory where all the phy files are located, and did `ls > filelist.txt`. This gives me a list of phy of the 5,000 regions so I can run an array
     
