@@ -7,7 +7,7 @@
 #SBATCH -e /home/crq857/projects/Chapter2/slurmout_Oct/astral_extract_%A_%a.err
 #SBATCH --array=10-5000%10
 
-RANDOMREGION=$(sed "${SLURM_ARRAY_TASK_ID}q;d" listfiles.txt)
+RANDOMREGION=$(sed "${SLURM_ARRAY_TASK_ID}q;d" list_of_random_positions.txt)
 
 mkdir input #make a directory to store the 5000 vcf files
 cd input
