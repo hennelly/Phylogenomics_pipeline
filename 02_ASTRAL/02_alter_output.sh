@@ -18,3 +18,7 @@ awk '!/^$/{print  > "File_"NR".txt" }' randomregions_output_bedfile.txt
 ls > list_of_random_positions.txt
 
 ## This next script now makes a list of all these individual files into one file where each line is File_1.txt File_2.txt File_3.txt, etc. We are making this to run an array in the next script. 
+
+
+
+
